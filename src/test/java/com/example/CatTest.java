@@ -28,16 +28,12 @@ public class CatTest {
     }
 
     @Test
-    public void getFoodReturnListOfPredatorFood() {
-        try {
-            Cat cat = new Cat(mockedFeline);
-            Mockito.when(mockedFeline.eatMeat()).thenReturn(TestData.PREDATOR_FOOD);
-            List expected = TestData.PREDATOR_FOOD;
-            List actual = cat.getFood();
-            assertEquals("Не еда хищников!", expected, actual);
-        } catch (Exception e) {
-            System.out.println("Проверьте параметры теста!");
-        }
+    public void getFoodReturnListOfPredatorFood() throws Exception {
+        Cat cat = new Cat(mockedFeline);
+        Mockito.when(mockedFeline.eatMeat()).thenReturn(TestData.PREDATOR_FOOD);
+        List expected = TestData.PREDATOR_FOOD;
+        List actual = cat.getFood();
+        assertEquals("Не еда хищников!", expected, actual);
     }
 
 }
